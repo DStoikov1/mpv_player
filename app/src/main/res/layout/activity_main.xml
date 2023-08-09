@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <LinearLayout
+       android:id="@+id/ll_wrapper_main"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_centerInParent="true"
+       android:orientation="vertical">
+       
+       <ImageView
+           android:layout_width="300dp"
+           android:layout_height="300dp"
+           android:src="@drawable/slipknot"
+           android:layout_marginBottom="40dp"/>
+       
+       
+       <SeekBar
+           android:id="@+id/seekbar"
+           android:layout_width="300dp"
+           android:layout_height="wrap_content"
+           android:layout_marginBottom="40dp"/>
+       
+       
+       <LinearLayout
+           android:gravity="center"
+           android:id="@+id/ll_wrapper"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+
+       <com.google.android.material.floatingactionbutton.FloatingActionButton
+           android:id="@+id/fab_play"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_margin="20dp"
+           android:clickable="true"
+           app:srcCompat = "@drawable/baseline_play"/>
+
+       <com.google.android.material.floatingactionbutton.FloatingActionButton
+           android:id="@+id/fab_stop"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_margin="20dp"
+           android:clickable="true"
+           app:srcCompat = "@drawable/baseline_stop_24"/>
+
+
+       <com.google.android.material.floatingactionbutton.FloatingActionButton
+           android:id="@+id/fab_pause"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_margin="20dp"
+           android:clickable="true"
+           app:srcCompat = "@drawable/baseline_pause_24"/>
+
+       </LinearLayout>
+   </LinearLayout>
+       
+       
+
+
+</RelativeLayout>
