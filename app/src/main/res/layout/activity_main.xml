@@ -31,48 +31,42 @@
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_gravity="center_horizontal"
-           android:text="0:00"
-           android:textSize="14sp" />
+           android:text="00:00"
+           android:gravity="center"
+           android:textSize="15sp" />
        
        <LinearLayout
-           android:gravity="center"
            android:id="@+id/ll_wrapper"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:orientation="horizontal">
+           android:orientation="horizontal"
+           android:layout_gravity="center">
 
        <com.google.android.material.floatingactionbutton.FloatingActionButton
            android:id="@+id/fab_play"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_margin="20dp"
-           android:clickable="true"
-           app:srcCompat = "@drawable/baseline_play"
-           android:layout_gravity="center" />
+           android:layout_marginTop="10dp"
+           app:srcCompat = "@drawable/baseline_play" />
 
-
-           <!-- <com.google.android.material.floatingactionbutton.FloatingActionButton
-                     android:id="@+id/fab_stop"
-                     android:layout_width="wrap_content"
-                     android:layout_height="wrap_content"
-                     android:layout_margin="20dp"
-                     android:clickable="true"
-                     app:srcCompat = "@drawable/baseline_stop_24"/>-->
-
-
-           <!--   <com.google.android.material.floatingactionbutton.FloatingActionButton
-                  android:id="@+id/fab_pause"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:layout_margin="20dp"
-                  android:clickable="true"
-                  app:srcCompat = "@drawable/baseline_pause_24"/>-->
 
 
        </LinearLayout>
+
+       <Button
+       android:id="@+id/btn"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+           android:text="тест 2активити(пока не работает)">
+       </Button>
+
+
+
    </LinearLayout>
-       
-       
+
+
+
+
 
 
 </RelativeLayout>

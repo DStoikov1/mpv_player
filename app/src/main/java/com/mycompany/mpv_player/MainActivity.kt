@@ -1,9 +1,11 @@
 package com.mycompany.mpv_player
 
+import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.widget.Button
 import android.widget.SeekBar
 import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -15,8 +17,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var durationTextView: TextView
     private lateinit var fab_play: FloatingActionButton
-   // private lateinit var fab_pause: FloatingActionButton
-   // private lateinit var fab_stop: FloatingActionButton
+    private lateinit var btn: Button
+
     private lateinit var seekbar: SeekBar
 
 
@@ -26,16 +28,15 @@ class MainActivity : AppCompatActivity() {
 
         durationTextView = findViewById(R.id.durationTextView)
         fab_play = findViewById(R.id.fab_play)
-      //  fab_pause = findViewById(R.id.fab_pause)
-       // fab_stop = findViewById(R.id.fab_stop)
         seekbar = findViewById(R.id.seekbar)
+
+        btn = findViewById(R.id.btn)
 
         controlSound(currentSong[0])
 
         mp?.setOnCompletionListener {
-            // This block will be executed when the playback completes
-            mp?.seekTo(0) // Reset the playback position to the beginning
-            mp?.start() // Start playing again
+            mp?.seekTo(0)
+            mp?.start()
         }
     }
 
@@ -65,6 +66,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+btn.setOnClickListener{
+    val intent = Intent(this@MainActivity, AllTheStuffActivity::class.java)
+    startActivity(intent)
+}
 
     // Rest of the code...
    /* }
@@ -131,4 +136,12 @@ class MainActivity : AppCompatActivity() {
             }, 0)
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mp?.release()
+        mp = null
+    }
+
+
 }
