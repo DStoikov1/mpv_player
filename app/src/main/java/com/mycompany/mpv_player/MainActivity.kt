@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var durationTextView: TextView
     private lateinit var fab_play: FloatingActionButton
-    private lateinit var fab_pause: FloatingActionButton
-    private lateinit var fab_stop: FloatingActionButton
+   // private lateinit var fab_pause: FloatingActionButton
+   // private lateinit var fab_stop: FloatingActionButton
     private lateinit var seekbar: SeekBar
 
 
@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         durationTextView = findViewById(R.id.durationTextView)
         fab_play = findViewById(R.id.fab_play)
-        fab_pause = findViewById(R.id.fab_pause)
-        fab_stop = findViewById(R.id.fab_stop)
+      //  fab_pause = findViewById(R.id.fab_pause)
+       // fab_stop = findViewById(R.id.fab_stop)
         seekbar = findViewById(R.id.seekbar)
 
         controlSound(currentSong[0])
@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun controlSound(id: Int) {
+        var isPlaying = false
+
         fab_play.setOnClickListener {
             if (mp == null) {
                 mp = MediaPlayer.create(this, id)
@@ -51,10 +53,20 @@ class MainActivity : AppCompatActivity() {
                 }
                 initialiseSeekBar()
             }
-            mp?.start()
+
+            if (!isPlaying) {
+                mp?.start()
+                isPlaying = true
+                fab_play.setImageResource(R.drawable.baseline_pause_24) // Change the play button icon to pause
+            } else {
+                mp?.pause()
+                isPlaying = false
+                fab_play.setImageResource(R.drawable.baseline_play) // Change the pause button icon to play
+            }
         }
 
-        // Rest of the code...
+
+    // Rest of the code...
    /* }
 
 
@@ -67,18 +79,18 @@ class MainActivity : AppCompatActivity() {
             mp?.start()
         }*/
 
-        fab_pause.setOnClickListener {
+       /* fab_pause.setOnClickListener {
             mp?.pause()
-        }
+        }*/
 
-        fab_stop.setOnClickListener {
+      /*  fab_stop.setOnClickListener {
             if (mp != null) {
                 mp?.stop()
                 mp?.reset()
                 mp?.release()
                 mp = null
             }
-        }
+        }*/
 
         seekbar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
