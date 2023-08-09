@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.mpv_player'
+    namespace 'com.mycompany.mpv_player'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.mpv_player"
+        applicationId "com.mycompany.mpv_player"
         minSdk 21
         targetSdk 33
         versionCode 1

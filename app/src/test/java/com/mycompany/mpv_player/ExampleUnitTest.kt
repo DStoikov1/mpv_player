@@ -1,4 +1,4 @@
-package com.example.mpv_player
+package com.mycompany.mpv_player
 
 import org.junit.Test
 

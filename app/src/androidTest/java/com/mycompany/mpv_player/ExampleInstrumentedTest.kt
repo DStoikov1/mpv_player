@@ -1,4 +1,4 @@
-package com.example.mpv_player
+package com.mycompany.mpv_player
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
